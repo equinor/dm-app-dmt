@@ -1,0 +1,36 @@
+on:
+  # Workflow dispatch is used for manual triggers
+  workflow_dispatch:
+  # Workflow call is used for called from another workflow
+  workflow_call:
+
+env:
+  IMAGE_REGISTRY: datamodelingtool.azurecr.io
+  API_IMAGE: datamodelingtool.azurecr.io/dmt/api
+  WEB_IMAGE: datamodelingtool.azurecr.io/dmt/web
+
+jobs:
+  test-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Run prettier formatting
+        run: pre-commit run prettier --all-files
+
+      - name: "Build Web Image"
+        run: |
+          docker pull $WEB_IMAGE
+          docker-compose -f docker-compose.yml  -f docker-compose.ci.yml build
+
+      - name: "Web Tests"
+        run: docker-compose -f docker-compose.yml  -f docker-compose.ci.yml run --rm web yarn test
+
+      - name: "Test for typescript errors"
+        run: docker-compose -f docker-compose.yml  -f docker-compose.ci.yml run --rm web yarn tsc
+
+      - name: "Run ESlint"
+        run: docker-compose -f docker-compose.yml  -f docker-compose.ci.yml run --rm web npm run lint:fix

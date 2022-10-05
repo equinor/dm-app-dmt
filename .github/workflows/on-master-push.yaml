@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests:
+    uses: ./.github/workflows/tests.yaml
+
+  publish-latest:
+    needs: tests
+    uses: ./.github/workflows/publish.yaml
+    with:
+      image-tag: latest
+      oauth-redirect-url: https://proxy-data-modelling-tool-dev.radix.equinor.com
+    secrets:
+      ACR_SECRET: ${{ secrets.ACR_SECRET }}
