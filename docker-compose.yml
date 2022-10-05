@@ -1,0 +1,38 @@
+version: "3.4"
+
+services:
+#  nginx:
+#    restart: unless-stopped
+#    build:
+#      context: ./nginx
+#    image: datamodelingtool.azurecr.io/dmt/nginx
+#    ports:
+#      - "80:8080"
+#    links:
+#      - web
+#      - api
+
+  dmss:
+    image: datamodelingtool.azurecr.io/dmss:latest
+    restart: unless-stopped
+    environment:
+      ENVIRONMENT: local
+      MONGO_INITDB_ROOT_USERNAME: maf
+      MONGO_INITDB_ROOT_PASSWORD: maf
+      SECRET_KEY: sg9aeUM5i1JO4gNN8fQadokJa3_gXQMLBjSGGYcfscs= # Don't reuse this in production...
+    depends_on:
+      - db
+
+  db:
+    image: mongo:3.4
+    command: mongod --quiet
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: maf
+      MONGO_INITDB_ROOT_PASSWORD: maf
+
+  web:
+    build: .
+    image: datamodelingtool.azurecr.io/dmt/web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
