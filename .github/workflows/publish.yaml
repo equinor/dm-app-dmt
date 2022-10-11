@@ -23,7 +23,7 @@ env:
   WEB_IMAGE: datamodelingtool.azurecr.io/dmt/web
 
 jobs:
-  build-and-publish-web-master:
+  build-and-publish-web-main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
