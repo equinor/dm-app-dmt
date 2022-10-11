@@ -1242,10 +1242,10 @@
   resolved "https://registry.yarnpkg.com/@development-framework/default-pdf/-/default-pdf-1.0.0.tgz#813b00437d43683c4840653e612f30c4847de81e"
   integrity sha512-++ecDx1PvywjekHyXKLGs1VJ1VCvGZ+/AJfp1i01Flo37lHNvnOpSQ3QG0BdLYGtT8yR1Z0PgYsA46A+2rC0tw==
 
-"@development-framework/dm-core@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@development-framework/dm-core/-/dm-core-1.0.13.tgz#4fd009e7660c304a9a34cfccf27b9adc5b647e4e"
-  integrity sha512-F/MEohIu+NI+4H0BN/gqCyv0RNj/xRZ1x4rO0pgQpxw9N67L8DTzIN7jeg9x6M0BdGCK48fQFVeL4P6Ni0le+A==
+"@development-framework/dm-core@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@development-framework/dm-core/-/dm-core-1.0.14.tgz#6a5cfe6425d1f59d655f060425f43a6695c8d4cd"
+  integrity sha512-fV8wK5Fu7Y8nvPhsjlKfCLyyns85DNuk0CvWv3gztXTgicHUPrsCybbeLVkBgLrRG1v1wFERLdHmSTxVMgTzBQ==
   dependencies:
     "@equinor/eds-core-react" "^0.20.0"
     "@equinor/eds-icons" "^0.12.0"
