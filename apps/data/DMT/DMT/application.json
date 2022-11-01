@@ -1,0 +1,8 @@
+{
+  "_id": "46a2c6ce-5bb4-41bc-923e-ede8dc95500e",
+  "name": "DMT",
+  "type": "DMT/DMT/DMTApplication",
+  "dataSources": ["system", "DemoDS", "DMT"],
+  "label": "Data Modelling Tool",
+  "description": "Generic Blueprint and Entity browser. Provides edit, search, and views."
+}

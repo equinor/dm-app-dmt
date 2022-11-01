@@ -44,10 +44,10 @@
       "plugin": "form",
       "category": "edit",
       "config": {
-        "type": "DMT-Internal/DMT/ui-plugins/form/FormInput",
+        "type": "DMT/DMT/ui-plugins/form/FormInput",
         "attributes": [
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/StringField",
+            "type": "DMT/DMT/ui-plugins/form/fields/StringField",
             "name": "bar",
             "widget": "TextareaWidget"
           }

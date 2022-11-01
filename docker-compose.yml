@@ -1,16 +1,6 @@
 version: "3.4"
 
 services:
-#  nginx:
-#    restart: unless-stopped
-#    build:
-#      context: ./nginx
-#    image: datamodelingtool.azurecr.io/dmt/nginx
-#    ports:
-#      - "80:8080"
-#    links:
-#      - web
-#      - api
 
   dmss:
     image: datamodelingtool.azurecr.io/dmss:latest
@@ -22,6 +12,8 @@ services:
       SECRET_KEY: sg9aeUM5i1JO4gNN8fQadokJa3_gXQMLBjSGGYcfscs= # Don't reuse this in production...
     depends_on:
       - db
+    ports:
+      - "5000:5000"
 
   db:
     image: mongo:3.4
@@ -35,4 +27,4 @@ services:
     image: datamodelingtool.azurecr.io/dmt/web
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "80:3000"

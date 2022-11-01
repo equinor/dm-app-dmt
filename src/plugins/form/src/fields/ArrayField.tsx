@@ -9,7 +9,6 @@ import { useRegistryContext } from '../RegistryContext'
 import {
   AuthContext,
   DmssAPI,
-  DmtAPI,
   ErrorResponse,
 } from '@development-framework/dm-core'
 import DynamicTable from '../components/DynamicTable'
@@ -48,8 +47,7 @@ export default function Fields(props: any) {
 
   const { documentId, dataSourceId, onOpen } = useRegistryContext()
   const { token } = useContext(AuthContext)
-  const dmtApi = new DmtAPI(token)
-  const dmssAPI = new DmssAPI(token, 'http://localhost:8000')
+  const dmssAPI = new DmssAPI(token)
   const { control } = useFormContext()
 
   const { fields, append, remove } = useFieldArray({
@@ -60,7 +58,7 @@ export default function Fields(props: any) {
   const handleAddObject = () => {
     const name: string = `${namePath}-${fields.length}`
 
-    dmtApi
+    dmssAPI
       .instantiateEntity({
         basicEntity: { name: name, type: type as string },
       })

@@ -107,51 +107,51 @@
       "plugin": "form",
       "category": "edit",
       "config": {
-        "type": "DMT-Internal/DMT/ui-plugins/form/FormInput",
+        "type": "DMT/DMT/ui-plugins/form/FormInput",
         "attributes": [
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/StringField",
+            "type": "DMT/DMT/ui-plugins/form/fields/StringField",
             "name": "type",
             "widget": "TypeWidget"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/StringField",
+            "type": "DMT/DMT/ui-plugins/form/fields/StringField",
             "name": "aDate",
             "widget": "TextWidget",
             "format": "date-time"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/StringField",
+            "type": "DMT/DMT/ui-plugins/form/fields/StringField",
             "name": "description",
             "widget": "TextareaWidget"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/StringField",
+            "type": "DMT/DMT/ui-plugins/form/fields/StringField",
             "name": "aStringAsTextfield",
             "widget": "TextareaWidget"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/ObjectField",
+            "type": "DMT/DMT/ui-plugins/form/fields/ObjectField",
             "name": "aNestedObject",
             "uiRecipe": "aRecipeName"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/StringField",
+            "type": "DMT/DMT/ui-plugins/form/fields/StringField",
             "name": "blueprintPicker",
             "widget": "BlueprintPickerWidget"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/ObjectField",
+            "type": "DMT/DMT/ui-plugins/form/fields/ObjectField",
             "name": "aNestedObjectWithCustomUI",
             "uiRecipe": "custom"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/StringField",
+            "type": "DMT/DMT/ui-plugins/form/fields/StringField",
             "name": "blueprintPicker",
             "widget": "ObjectWidget"
           },
           {
-            "type": "DMT-Internal/DMT/ui-plugins/form/fields/ArrayField",
+            "type": "DMT/DMT/ui-plugins/form/fields/ArrayField",
             "name": "listOfObjects",
             "widget": "TableWidget",
             "columns": ["name", "foo", "bar", "baz"]

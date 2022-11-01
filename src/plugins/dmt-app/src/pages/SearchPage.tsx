@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 import {
   DmssAPI,
   BlueprintPicker,
-  TDataSources,
   JsonView,
   ApplicationContext,
   AuthContext,
@@ -175,7 +174,7 @@ function DynamicAttributeFilter({
   const [expanded, setExpanded] = useState<boolean>(false)
   const [nestedAttributes, setNestedAttributes] = useState<TAttribute[]>([])
   const { token } = useContext(AuthContext)
-  const dmssAPI = new DmssAPI(token, 'http://localhost:8000')
+  const dmssAPI = new DmssAPI(token)
 
   // Pass nested object to callback from parent
   function nestedOnChange(filterChange: TGenericObject | string) {
@@ -436,7 +435,7 @@ function ResultContainer(props: { result: { [key: string]: any } }) {
 function SelectDataSource(props: {
   selectedDataSources: string[]
   setDataSources: (ds: string[]) => void
-  allDataSources: TDataSources
+  allDataSources: TDataSource[]
 }) {
   const { selectedDataSources, setDataSources, allDataSources } = props
   return (
@@ -482,7 +481,7 @@ export default ({ settings }: TGenericObject) => {
   )
   const [result, setResult] = useState<{ [key: string]: any }>({})
   const [queryError, setQueryError] = useState('')
-  const [dataSources, setDataSources] = useState<TDataSources>([])
+  const [dataSources, setDataSources] = useState<TDataSource[]>([])
   const { token } = useContext(AuthContext)
   const dmssAPI = new DmssAPI(token, 'http://localhost:8000')
 
@@ -490,7 +489,7 @@ export default ({ settings }: TGenericObject) => {
     dmssAPI
       .dataSourceGetAll()
       .then((response: AxiosResponse<DataSourceInformation[]>) => {
-        const dataSources: TDataSources = response.data
+        const dataSources: TDataSource[] = response.data
         setDataSources(dataSources)
       })
       .catch((error) => {

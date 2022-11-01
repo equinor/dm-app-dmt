@@ -2,10 +2,10 @@
   "name": "@development-framework/data-modelling-tool",
   "version": "0.0.2",
   "dependencies": {
-    "@development-framework/default-pdf": "^1.0.0",
-    "@development-framework/dm-core": "^1.0.14",
-    "@development-framework/yaml-view": "^1.0.1",
-    "@development-framework/blueprint": "^1.0.0",
+    "@development-framework/default-pdf": "^1.0.3",
+    "@development-framework/dm-core": "^1.0.20",
+    "@development-framework/yaml-view": "^1.0.2",
+    "@development-framework/blueprint": "^1.0.2",
     "@equinor/eds-core-react": "^0.20.0",
     "@equinor/eds-icons": "^0.12.0",
     "@equinor/eds-tokens": "^0.7.0",
@@ -20,8 +20,10 @@
     "react-is": "^17.0.2",
     "react-oauth2-code-pkce": "^1.7.1",
     "react-router-dom": "5.3.3",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.2.3"
+    "react-scripts": "5.0.1"
+  },
+  "peerDependencies": {
+    "styled-components": ">=5.x"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
@@ -42,8 +44,8 @@
     "typescript": "^4.8.3"
   },
   "scripts": {
-    "start": "REACT_APP_DMSS_URL=http://localhost:8000 react-scripts start",
-    "build": "react-scripts build",
+    "start": "REACT_APP_DMSS_URL=http://localhost:5000 REACT_APP_JOB_URL=http://localhost:5001 react-scripts start",
+    "build": "REACT_APP_DMSS_URL=http://localhost:5000 REACT_APP_JOB_URL=http://localhost:5001 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:fix": "eslint --fix --ext .js,.jsx,.tsx,.ts ."

@@ -1,6 +1,5 @@
 import {
   DmssAPI,
-  DmtAPI,
   EntityPickerButton,
   ErrorResponse,
   Loading,
@@ -65,8 +64,7 @@ const AddObject = (props: any) => {
   const { type, namePath, onAdd, contained, dataSourceId, documentId } = props
   const { setValue } = useFormContext()
   const { token } = useContext(AuthContext)
-  const dmtApi = new DmtAPI(token)
-  const dmssAPI = new DmssAPI(token, 'http://localhost:8000')
+  const dmssAPI = new DmssAPI(token)
   const handleAdd = () => {
     const options = {
       shouldValidate: true,
@@ -74,7 +72,7 @@ const AddObject = (props: any) => {
       shouldTouch: true,
     }
 
-    dmtApi
+    dmssAPI
       .instantiateEntity({
         basicEntity: { name: namePath as string, type: type as string },
       })

@@ -1,18 +1,22 @@
 import React, { useContext } from 'react'
 import {
-  IDashboard,
-  useDashboard,
-} from '../../context/dashboard/DashboardProvider'
-import { ELayoutComponents } from '../../context/dashboard/useLayout'
+  ELayoutComponents,
+  ILayout,
+  useLayout,
+} from '../../context/dashboard/useLayout'
 import { ModalProvider } from '../../context/modal/ModalContext'
 import { GoldenLayoutComponent } from '../../components/golden-layout/GoldenLayoutComponent'
 import GoldenLayoutPanel from '../../components/golden-layout/GoldenLayoutPanel'
 import styled from 'styled-components'
 import {
+  AuthContext,
+  DmssAPI,
   FSTreeContext,
+  TDataSource,
   TreeNode,
   TreeView,
   UIPluginSelector,
+  useDataSources,
 } from '@development-framework/dm-core'
 import { NodeRightClickMenu } from '../../components/context-menu/ContextMenu'
 
@@ -55,14 +59,14 @@ const LAYOUT_CONFIG = {
 }
 
 export default () => {
-  const dashboard: IDashboard = useDashboard()
   const { treeNodes, loading } = useContext(FSTreeContext)
+  const layout: ILayout = useLayout()
 
   const open = (node: TreeNode) => {
     if (Array.isArray(node.entity)) {
       return
     }
-    dashboard.models.layout.operations.add(
+    layout.operations.add(
       node.nodeId,
       node?.name || 'None',
       ELayoutComponents.blueprint,
@@ -71,7 +75,7 @@ export default () => {
         type: node.entity.type,
       }
     )
-    dashboard.models.layout.operations.focus(node.nodeId)
+    layout.operations.focus(node.nodeId)
   }
 
   return (
@@ -99,7 +103,7 @@ export default () => {
               ELayoutComponents.blueprint,
               wrapComponent(UIPluginSelector)
             )
-            dashboard.models.layout.operations.registerLayout({
+            layout.operations.registerLayout({
               myLayout,
             })
           }}
