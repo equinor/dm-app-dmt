@@ -1,4 +1,4 @@
-FROM node:16-alpine AS base
+FROM node:18-alpine AS base
 
 ARG AUTH_ENABLED=0
 ARG REDIRECT_URI=http://localhost/
@@ -16,6 +16,12 @@ ENV REACT_APP_LOGOUT_ENDPOINT=https://login.microsoftonline.com/${REACT_APP_AUTH
 ENV REACT_APP_AUTH_REDIRECT_URI=$REDIRECT_URI
 
 WORKDIR /code/
+
+# Add python for dm-cli
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN python3 -m ensurepip --upgrade
+RUN pip3 install --no-cache dm-cli
+
 COPY package.json yarn.lock ./
 RUN yarn install --ignore-scripts  --frozen-lockfile --link-duplicates
 COPY --chown=1000 . .
@@ -26,7 +32,6 @@ CMD ["yarn", "start"]
 FROM base AS prod
 RUN npm install -g serve
 RUN yarn build
-WORKDIR /code/packages/home
 EXPOSE 3000
 CMD ["serve", "--single", "build", "--listen", "3000"]
 USER 1000

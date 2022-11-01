@@ -1,15 +1,15 @@
 {
-  "name": "ArrayField",
+  "name": "StringField",
   "type": "system/SIMOS/Blueprint",
-  "extends": ["DMT-Internal/DMT/ui-plugins/form/fields/Field"],
+  "extends": ["DMT/DMT/ui-plugins/form/fields/Field"],
   "attributes": [
     {
-      "name": "columns",
+      "name": "format",
       "type": "system/SIMOS/BlueprintAttribute",
       "attributeType": "string",
-      "label": "Columns",
+      "label": "Format",
       "default": "",
-      "dimensions": "*"
+      "optional": true
     }
   ]
 }

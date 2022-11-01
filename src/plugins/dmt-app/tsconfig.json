@@ -1,5 +1,4 @@
 {
-  "extends": "../../../../web/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
@@ -8,7 +7,8 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "jsx": "react"
   },
   "include": ["src"],
   "exclude": ["node_modules", "src/**/*.spec.ts", "dist"]

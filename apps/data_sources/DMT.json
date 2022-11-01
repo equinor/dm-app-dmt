@@ -1,16 +1,15 @@
 {
-  "name": "DemoDS",
+  "name": "DMT",
   "repositories": {
-    "forecastDB": {
+    "a": {
       "type": "mongo-db",
       "host": "db",
       "port": 27017,
       "username": "maf",
       "password": "maf",
       "tls": false,
-      "database": "demo-app",
-      "collection": "default",
-      "data_types": ["blob"]
+      "database": "DMT-DS",
+      "collection": "DMT-DS"
     }
   }
 }
