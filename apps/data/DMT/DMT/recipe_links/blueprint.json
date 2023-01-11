@@ -1,0 +1,18 @@
+{
+  "type": "CORE:RecipeLink",
+  "_blueprintPath_": "CORE:Blueprint",
+  "uiRecipes": [
+    {
+      "name": "Edit",
+      "type": "CORE:UiRecipe",
+      "plugin": "edit-blueprint",
+      "category": "edit"
+    },
+    {
+      "name": "Yaml",
+      "type": "CORE:UiRecipe",
+      "plugin": "yaml-view",
+      "category": "view"
+    }
+  ]
+}
