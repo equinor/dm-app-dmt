@@ -2,10 +2,11 @@
   "name": "@development-framework/data-modelling-tool",
   "version": "0.0.2",
   "dependencies": {
-    "@development-framework/default-pdf": "^1.0.3",
-    "@development-framework/dm-core": "^1.0.20",
-    "@development-framework/yaml-view": "^1.0.2",
-    "@development-framework/blueprint": "^1.0.2",
+    "@development-framework/blueprint": "^1.0.4",
+    "@development-framework/default-pdf": "^1.0.5",
+    "@development-framework/dm-core": "^1.0.30",
+    "@development-framework/tabs": "^1.0.2",
+    "@development-framework/yaml-view": "^1.0.4",
     "@equinor/eds-core-react": "^0.20.0",
     "@equinor/eds-icons": "^0.12.0",
     "@equinor/eds-tokens": "^0.7.0",
@@ -18,7 +19,7 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.36.1",
     "react-is": "^17.0.2",
-    "react-oauth2-code-pkce": "^1.7.1",
+    "react-oauth2-code-pkce": "^1.10.1",
     "react-router-dom": "5.3.3",
     "react-scripts": "5.0.1"
   },
@@ -44,7 +45,7 @@
     "typescript": "^4.8.3"
   },
   "scripts": {
-    "start": "REACT_APP_DMSS_URL=http://localhost:5000 REACT_APP_JOB_URL=http://localhost:5001 react-scripts start",
+    "start": "WDS_SOCKET_PORT=80 REACT_APP_DMSS_URL=http://localhost:5000 REACT_APP_JOB_URL=http://localhost:5001 react-scripts start",
     "build": "REACT_APP_DMSS_URL=http://localhost:5000 REACT_APP_JOB_URL=http://localhost:5001 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

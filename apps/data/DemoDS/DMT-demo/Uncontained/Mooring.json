@@ -1,12 +1,12 @@
 {
   "name": "Mooring",
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/DefaultUiRecipes", "system/SIMOS/NamedEntity"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:NamedEntity"],
   "description": "",
   "attributes": [
     {
       "name": "Bigness",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "description": "How big? Very",
       "attributeType": "integer",
       "default": 0,

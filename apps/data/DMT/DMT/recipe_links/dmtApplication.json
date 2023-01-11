@@ -1,0 +1,12 @@
+{
+  "type": "CORE:RecipeLink",
+  "_blueprintPath_": "DMTApplication",
+  "uiRecipes": [
+    {
+      "name": "Default",
+      "type": "CORE:UiRecipe",
+      "plugin": "DMT",
+      "category": "Application"
+    }
+  ]
+}

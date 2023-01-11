@@ -1,17 +1,17 @@
 {
   "name": "Hobby",
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/NamedEntity"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:NamedEntity"],
   "attributes": [
     {
       "name": "YearsOfExperience",
       "attributeType": "integer",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
       "name": "DifficultyLevel",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     }
   ]
 }

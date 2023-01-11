@@ -1,0 +1,12 @@
+{
+  "type": "CORE:RecipeLink",
+  "_blueprintPath_": "CORE:blob_types/PDF",
+  "uiRecipes": [
+    {
+      "name": "Default",
+      "type": "CORE:UiRecipe",
+      "plugin": "default-pdf",
+      "category": "Application"
+    }
+  ]
+}

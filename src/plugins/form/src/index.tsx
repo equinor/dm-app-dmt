@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import {
   BlueprintPicker,
-  EDmtPluginType,
-  IDmtUIPlugin,
+  EPluginType,
+  IUIPlugin,
   Loading,
   TReference,
   TSTaskBody,
@@ -27,7 +27,7 @@ const widgets = {
   TypeWidget: (props: any) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { label, variant, onChange, value, helperText } = props
-    const [blueprint, isLoading] = useBlueprint(value)
+    const { blueprint, isLoading } = useBlueprint(value)
 
     if (isLoading) return <Loading />
     if (blueprint === undefined) return <div>Could not find the blueprint</div>
@@ -105,14 +105,13 @@ const widgets = {
   },
 }
 
-const PluginComponent = (props: IDmtUIPlugin) => {
+const PluginComponent = (props: IUIPlugin) => {
   const { config, onOpen } = props
-  const { documentId, dataSourceId } = props
-  const [document, loading, updateDocument] = useDocument<any>(
-    dataSourceId,
-    documentId,
-    999
-  )
+  const { idReference } = props
+  const _applicationId = idReference.split('/')
+  const dataSourceId = _applicationId[0]
+  const documentId = _applicationId[1]
+  const [document, loading, updateDocument] = useDocument<any>(idReference, 999)
   if (loading) return <Loading />
 
   const handleOnSubmit = (formData: any) => {
@@ -136,7 +135,7 @@ const PluginComponent = (props: IDmtUIPlugin) => {
 export const plugins: any = [
   {
     pluginName: 'form',
-    pluginType: EDmtPluginType.UI,
+    pluginType: EPluginType.UI,
     component: PluginComponent,
   },
 ]

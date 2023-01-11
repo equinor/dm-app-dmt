@@ -25,14 +25,9 @@ export default ({ settings }: any) => {
     data_source: string
     entity_id: string
   }>()
-  const [
-    document,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    documentLoading,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    setDocument,
-    error,
-  ] = useDocument<TValidEntity>(data_source, entity_id)
+  const [document, , , error] = useDocument<TValidEntity>(
+    `${data_source}/${entity_id}`
+  )
 
   if (error)
     return (

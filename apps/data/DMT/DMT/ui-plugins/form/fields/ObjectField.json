@@ -1,5 +1,5 @@
 {
   "name": "ObjectField",
-  "type": "system/SIMOS/Blueprint",
+  "type": "CORE:Blueprint",
   "extends": ["DMT/DMT/ui-plugins/form/fields/Field"]
 }

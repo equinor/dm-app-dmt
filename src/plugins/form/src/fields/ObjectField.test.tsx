@@ -50,9 +50,8 @@ describe('ObjectField', () => {
       const { container } = render(<Form type="MyBlueprint" />)
 
       await waitFor(() => {
-        const foo: Element | null = container.querySelector(
-          ` input[name="foo"]`
-        )
+        const foo: Element | null =
+          container.querySelector(` input[name="foo"]`)
         expect(foo).toBeDefined()
         const fooValue = foo !== null ? foo.getAttribute('value') : ''
         expect(fooValue).toBe('beep')
@@ -88,9 +87,8 @@ describe('ObjectField', () => {
       mockBlueprintGet([blueprint])
       const { container } = render(<Form type="MyBlueprint" />)
       await waitFor(() => {
-        const inputNode: Element | null = container.querySelector(
-          ` input[name="foo"]`
-        )
+        const inputNode: Element | null =
+          container.querySelector(` input[name="foo"]`)
         expect(inputNode).toBeDefined()
         const id = inputNode !== null ? inputNode.getAttribute('id') : ''
         expect(id).toBe('foo')

@@ -2,9 +2,7 @@ import * as React from 'react'
 import { useContext } from 'react'
 import {
   ApplicationContext,
-  AuthContext,
-  DmssAPI,
-  EDmtPluginType,
+  EPluginType,
   Header,
   FSTreeProvider,
 } from '@development-framework/dm-core'
@@ -31,9 +29,6 @@ const theme = {
 }
 
 const PageComponent = () => {
-  // const { token } = useContext(AuthContext)
-  // const dmssAPI = new DmssAPI(token)
-
   const applicationSettings = useContext(ApplicationContext)
 
   return (
@@ -54,15 +49,7 @@ const PageComponent = () => {
           path="/view/:data_source/:entity_id"
           component={() => <ViewPage settings={applicationSettings} />}
         />
-        <Route
-          exact
-          path={`/`}
-          render={() => (
-            // <DashboardProvider dmssAPI={dmssAPI}>
-            <Editor />
-            // </DashboardProvider>
-          )}
-        />
+        <Route exact path={`/`} render={() => <Editor />} />
       </FSTreeProvider>
     </ThemeProvider>
   )
@@ -71,7 +58,7 @@ const PageComponent = () => {
 export const plugins: any = [
   {
     pluginName: 'DMT',
-    pluginType: EDmtPluginType.PAGE,
+    pluginType: EPluginType.PAGE,
     component: PageComponent,
   },
 ]

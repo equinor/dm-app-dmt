@@ -1,11 +1,11 @@
 {
   "name": "StringField",
-  "type": "system/SIMOS/Blueprint",
+  "type": "CORE:Blueprint",
   "extends": ["DMT/DMT/ui-plugins/form/fields/Field"],
   "attributes": [
     {
       "name": "format",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "label": "Format",
       "default": "",

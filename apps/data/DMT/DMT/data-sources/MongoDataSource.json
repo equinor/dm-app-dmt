@@ -1,5 +1,5 @@
 {
-  "type": "system/SIMOS/Blueprint",
+  "type": "CORE:Blueprint",
   "name": "MongoDataSource",
   "description": "BP of a MongoDataSource",
   "attributes": [
@@ -11,7 +11,7 @@
       "name": "name",
       "description": "Name of DataSource",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
       "default": "",
@@ -21,10 +21,10 @@
       "name": "host",
       "description": "Hostname of server",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "default": 27017,
       "dimensions": "",
       "optional": false,
@@ -40,7 +40,7 @@
       "name": "username",
       "description": "credentials: username",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
       "default": "",
@@ -50,10 +50,10 @@
       "name": "password",
       "description": "credentials: password",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "default": false,
       "dimensions": "",
       "optional": true,
@@ -70,7 +70,7 @@
       "name": "database",
       "description": "Name of database on server. Does not need to exist.",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
       "default": "dmt",
@@ -80,7 +80,7 @@
       "name": "collection",
       "description": "name of mongo collection in database. Does not need to exist",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     }
   ],
   "storageRecipes": [],

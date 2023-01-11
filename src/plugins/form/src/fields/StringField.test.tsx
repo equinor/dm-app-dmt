@@ -75,9 +75,8 @@ describe('StringField', () => {
         <Form type="SingleField" formData={formData} />
       )
       await waitFor(() => {
-        const inputNode: Element | null = container.querySelector(
-          ` input[name="foo"]`
-        )
+        const inputNode: Element | null =
+          container.querySelector(` input[name="foo"]`)
         expect(inputNode).toBeDefined()
         const value = inputNode !== null ? inputNode.getAttribute('value') : ''
         expect(value).toBe(formData.foo)
@@ -104,9 +103,8 @@ describe('StringField', () => {
         <Form type="SingleField" onSubmit={onSubmit} />
       )
       await waitFor(() => {
-        const inputNode: Element | null = container.querySelector(
-          ` input[name="foo"]`
-        )
+        const inputNode: Element | null =
+          container.querySelector(` input[name="foo"]`)
         expect(inputNode).toBeDefined()
         const value = inputNode !== null ? inputNode.getAttribute('value') : ''
         expect(value).toBe('boo')
@@ -135,9 +133,8 @@ describe('StringField', () => {
       ])
       const { container } = render(<Form type="SingleField" />)
       await waitFor(() => {
-        const inputNode: Element | null = container.querySelector(
-          ` input[name="foo"]`
-        )
+        const inputNode: Element | null =
+          container.querySelector(` input[name="foo"]`)
         expect(inputNode).toBeDefined()
         const id = inputNode !== null ? inputNode.getAttribute('id') : ''
         expect(id).toBe('foo')
@@ -161,9 +158,8 @@ describe('StringField', () => {
       ])
       const { container } = render(<Form type="SingleField" />)
       await waitFor(() => {
-        const inputNode: Element | null = container.querySelector(
-          ` input[name="foo"]`
-        )
+        const inputNode: Element | null =
+          container.querySelector(` input[name="foo"]`)
         expect(inputNode).toBeDefined()
         const id = inputNode !== null ? inputNode.getAttribute('id') : ''
         expect(id).toBe('foo')

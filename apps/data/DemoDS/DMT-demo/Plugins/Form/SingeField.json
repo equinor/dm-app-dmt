@@ -1,16 +1,16 @@
 {
   "name": "SingleField",
-  "type": "system/SIMOS/Blueprint",
+  "type": "CORE:Blueprint",
   "attributes": [
     {
       "name": "foo",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "optional": true
     },
     {
       "name": "bar",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "optional": true
     }
@@ -18,7 +18,7 @@
   "uiRecipes": [
     {
       "name": "Form",
-      "type": "system/SIMOS/UiRecipe",
+      "type": "CORE:UiRecipe",
       "plugin": "form",
       "category": "edit"
     }
