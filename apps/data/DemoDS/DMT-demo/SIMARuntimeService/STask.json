@@ -1,19 +1,19 @@
 {
   "name": "STask",
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/DefaultUiRecipes", "system/SIMOS/NamedEntity"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:NamedEntity"],
   "description": "Just a simple wrapper for a SIMA STask",
   "attributes": [
     {
       "name": "blob",
-      "attributeType": "system/SIMOS/Blob",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "attributeType": "CORE:Blob",
+      "type": "CORE:BlueprintAttribute",
       "description": "The stask"
     },
     {
       "name": "workflowTask",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "description": "Name of workflow task"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "type": "system/SIMOS/Blueprint",
+  "type": "CORE:Blueprint",
   "name": "AzureBlobStorageDataSource",
   "description": "BP of a MongoDataSource",
   "attributes": [
@@ -11,7 +11,7 @@
       "name": "name",
       "description": "Name of DataSource",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
       "default": "",
@@ -21,7 +21,7 @@
       "name": "account_name",
       "description": "Account name",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
       "default": "",
@@ -31,7 +31,7 @@
       "name": "account_key",
       "description": "Account key",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     },
     {
       "default": "dmt",
@@ -41,7 +41,7 @@
       "name": "collection",
       "description": "name of collection in database. Does not need to exist",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     }
   ],
   "storageRecipes": [],

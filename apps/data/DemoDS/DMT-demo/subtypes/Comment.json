@@ -1,12 +1,12 @@
 {
   "name": "Comment",
-  "type": "system/SIMOS/Blueprint",
+  "type": "CORE:Blueprint",
   "extends": [],
   "attributes": [
     {
       "name": "type",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "label": "Type",
       "default": "",
       "optional": false
@@ -14,7 +14,7 @@
     {
       "name": "description",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "default": "",
       "optional": true,
       "label": "Description"
@@ -22,7 +22,7 @@
     {
       "name": "text",
       "attributeType": "string",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "optional": true,
       "default": ""
     }

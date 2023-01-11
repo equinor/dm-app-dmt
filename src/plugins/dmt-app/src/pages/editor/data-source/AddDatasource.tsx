@@ -28,9 +28,8 @@ const AddDataSourceComponent = () => {
   const { token } = useContext(AuthContext)
   const dmssAPI = new DmssAPI(token, 'http://localhost:8000')
   const { getUiPlugin } = useContext(UiPluginContext)
-  const [selectedDatasourceType, setSelectedDatasourceType] = useState(
-    'mongo-db'
-  )
+  const [selectedDatasourceType, setSelectedDatasourceType] =
+    useState('mongo-db')
 
   const ExternalPlugin: ReactNode = getUiPlugin('form')
 

@@ -1,12 +1,12 @@
 {
-  "type": "system/SIMOS/Blueprint",
+  "type": "CORE:Blueprint",
   "name": "Config",
   "description": "Configuration for the 'Tabs' uiPlugin",
   "attributes": [
     {
       "name": "subCategories",
       "description": "A list of plugin categories that the tab plugin should render. Any category not listed will be filtered out.",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "dimensions": "*",
       "optional": true,

@@ -1,25 +1,25 @@
 {
   "name": "Nested",
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/DefaultUiRecipes"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:DefaultUiRecipes"],
   "attributes": [
     {
       "name": "foo",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "number",
       "label": "Foo",
       "optional": true
     },
     {
       "name": "bar",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "label": "Bar",
       "optional": true
     },
     {
       "name": "baz",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "label": "Baz",
       "optional": true
@@ -28,19 +28,19 @@
   "uiRecipes": [
     {
       "name": "custom",
-      "type": "system/SIMOS/UiRecipe",
+      "type": "CORE:UiRecipe",
       "plugin": "yaml-view",
       "category": "view"
     },
     {
       "name": "Form",
-      "type": "system/SIMOS/UiRecipe",
+      "type": "CORE:UiRecipe",
       "plugin": "form",
       "category": "edit"
     },
     {
       "name": "aRecipeName",
-      "type": "system/SIMOS/UiRecipe",
+      "type": "CORE:UiRecipe",
       "plugin": "form",
       "category": "edit",
       "config": {

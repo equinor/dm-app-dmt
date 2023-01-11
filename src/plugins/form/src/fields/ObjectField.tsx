@@ -53,7 +53,7 @@ const AddExternal = (props: any) => {
       />
       <NewEntityButton
         data-testid={`new-entity-${namePath}`}
-        setReference={handleAdd}
+        onCreated={handleAdd}
         type={type}
       />
     </ButtonGroup>
@@ -464,7 +464,7 @@ export const ObjectTypeSelector = (props: TObjectFieldProps): JSX.Element => {
     uiRecipeName,
   } = props
 
-  const [blueprint, isLoading] = useBlueprint(type)
+  const { blueprint, isLoading } = useBlueprint(type)
 
   if (isLoading) return <Loading />
   if (blueprint === undefined) return <div>Could not find the blueprint</div>

@@ -1,12 +1,12 @@
 {
   "name": "BaseChild",
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/NamedEntity"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:NamedEntity"],
   "attributes": [
     {
       "name": "AValue",
       "attributeType": "integer",
-      "type": "system/SIMOS/BlueprintAttribute"
+      "type": "CORE:BlueprintAttribute"
     }
   ]
 }

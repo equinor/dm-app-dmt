@@ -1,12 +1,12 @@
 {
   "name": "WindTurbine",
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/DefaultUiRecipes", "system/SIMOS/NamedEntity"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:NamedEntity"],
   "description": "",
   "attributes": [
     {
       "name": "Mooring",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "/Uncontained/Mooring",
       "optional": true,
       "contained": false

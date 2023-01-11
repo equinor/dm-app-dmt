@@ -26,26 +26,22 @@ Let the web app know of which DMSS to use by setting the `DMSS_URL` environment 
 ### Starting
 
 ```shell
-docker-compose up
+docker-compose pull
+docker-compose up --build
+# Load DMSS core documents
+docker-compose run --rm dmss reset-app
+# Load DMT app specific documents
+dm reset apps
+# Create DMT lookup for recipes
+dm create-lookup DMT DMT/DMT/recipe_links
 ```
 
 The web app will be served at http://localhost
 
-<!-- TODO: Update this with new import-cli tool
-
--->
-### Import data and reset database
-
-Import local documents to the configured DMSS_HOST (from /api/home directory).  
-Token is optional, but required if DMSS is configured with authentication.  
-Token can be acquired from the DMT Web application.
-
-```shell
-docker-compose run --rm api reset-app --token=Eyxx.xxxx.xxxx
-```
 
 If the data is corrupted or in a bad state, a hard reset of the DMSS is often a solution.
-This command will remove every _mongo database using the same database host as the core_, and upload DMSS's core documents.
+This command will remove every _mongo database using the same database host as the core_, and upload DMSS's core documents.  
+App specific documents and lookup has to be recreated.
 
 ```shell
 docker-compose run --rm dmss reset-app

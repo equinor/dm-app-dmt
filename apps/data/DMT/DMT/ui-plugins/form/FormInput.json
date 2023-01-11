@@ -1,12 +1,12 @@
 {
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/DefaultUiRecipes"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:DefaultUiRecipes"],
   "name": "FormInput",
   "description": "",
   "attributes": [
     {
       "name": "attributes",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "DMT/DMT/ui-plugins/form/fields/Field",
       "dimensions": "*",
       "optional": true,
@@ -14,7 +14,7 @@
     },
     {
       "name": "order",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "dimensions": "*",
       "optional": true,

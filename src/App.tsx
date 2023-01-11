@@ -1,24 +1,25 @@
 // @ts-nocheck
 
-import React from 'react'
-import './App.css'
+import React, { useContext } from 'react'
 import {
   ApplicationContext,
-  UIPluginSelector,
   useDocument,
+  UIPluginSelector,
+  UiPluginContext,
 } from '@development-framework/dm-core'
 import { Progress } from '@equinor/eds-core-react'
+import appSettings from './app-settings.json'
 
-const _applicationId = 'DMT/46a2c6ce-5bb4-41bc-923e-ede8dc95500e'.split('/')
+const _applicationId = appSettings.applicationId.split('/')
 const dataSourceId = _applicationId[0]
-const applicationId = _applicationId[1]
 
 function App() {
-  const [application, isLoading, updateApplication, error] = useDocument(
-    dataSourceId,
-    applicationId
+  const { loading: isPluginsLoading } = useContext(UiPluginContext)
+  const [application, isLoading, , error] = useDocument(
+    appSettings.applicationId
   )
-  if (isLoading) return <Progress.Circular />
+
+  if (isLoading || isPluginsLoading) return <Progress.Circular />
 
   if (error) {
     console.error(error)
@@ -28,11 +29,12 @@ function App() {
       </div>
     )
   }
+
   return (
     <ApplicationContext.Provider value={application}>
       <UIPluginSelector
         absoluteDottedId={`${dataSourceId}/${application?._id}`}
-        type={application.type}
+        type={application?.type}
         categories={['Application']}
       />
     </ApplicationContext.Provider>

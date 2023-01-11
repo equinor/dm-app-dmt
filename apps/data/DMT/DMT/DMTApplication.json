@@ -1,29 +1,21 @@
 {
   "name": "DMTApplication",
-  "type": "system/SIMOS/Blueprint",
-  "extends": ["system/SIMOS/Application"],
+  "type": "CORE:Blueprint",
+  "extends": ["CORE:Application"],
   "description": "",
   "attributes": [
     {
       "name": "label",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "optional": true
     },
     {
       "name": "dataSources",
-      "type": "system/SIMOS/BlueprintAttribute",
+      "type": "CORE:BlueprintAttribute",
       "attributeType": "string",
       "dimensions": "*",
       "optional": false
-    }
-  ],
-  "uiRecipes": [
-    {
-      "name": "Default",
-      "type": "system/SIMOS/UiRecipe",
-      "plugin": "DMT",
-      "category": "Application"
     }
   ]
 }

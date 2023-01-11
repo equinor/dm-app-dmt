@@ -1,6 +1,6 @@
 {
   "name": "myTurbineWithAction",
-  "type": "/Actions/WindTurbineWithAction",
+  "type": "Actions/WindTurbineWithAction",
   "description": "",
   "diameter": 0
 }
