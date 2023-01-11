@@ -3,7 +3,7 @@ version: "3.4"
 services:
 
   dmss:
-    image: datamodelingtool.azurecr.io/dmss:latest
+    image: dmss-dev
     restart: unless-stopped
     environment:
       ENVIRONMENT: local
