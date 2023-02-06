@@ -43,8 +43,9 @@ If the data is corrupted or in a bad state, a hard reset of the DMSS is often a 
 This command will remove every _mongo database using the same database host as the core_, and upload DMSS's core documents.  
 App specific documents and lookup has to be recreated.
 
-```shell
-docker-compose run --rm dmss reset-app
+Oneliner to reset database:
+```bash
+docker-compose run --rm dmss reset-app && dm reset apps && dm create-lookup DMT DMT/DMT/recipe_links
 ```
 
 ### Running Tests
