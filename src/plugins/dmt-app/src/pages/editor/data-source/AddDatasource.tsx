@@ -10,7 +10,6 @@ import {
   UiPluginContext,
   ErrorResponse,
 } from '@development-framework/dm-core'
-import { useModalContext } from '../../../context/modal/ModalContext'
 import { AxiosError } from 'axios'
 
 const constructType = (selectedDatasourceType: string) => {
@@ -67,14 +66,14 @@ const AddDataSourceComponent = () => {
 }
 
 export default () => {
-  const { openModal } = useModalContext()
+  // const { openModal } = useModalContext()
 
   const open = () => {
     const modalProps = {}
-    openModal(AddDataSourceComponent, {
-      dialog: { title: `Add data source` },
-      props: modalProps,
-    })
+    // openModal(AddDataSourceComponent, {
+    //   dialog: { title: `Add data source` },
+    //   props: modalProps,
+    // })
   }
 
   return (

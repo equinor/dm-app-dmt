@@ -1,23 +1,25 @@
-// @ts-nocheck
-
 import React, { useContext } from 'react'
 import {
   ApplicationContext,
   useDocument,
   UIPluginSelector,
   UiPluginContext,
+  FSTreeProvider,
+  UiPluginProvider,
 } from '@development-framework/dm-core'
 import { Progress } from '@equinor/eds-core-react'
 import appSettings from './app-settings.json'
+import plugins from './plugins'
 
 const _applicationId = appSettings.applicationId.split('/')
 const dataSourceId = _applicationId[0]
 
 function App() {
   const { loading: isPluginsLoading } = useContext(UiPluginContext)
-  const [application, isLoading, , error] = useDocument(
+  const [application, isLoading, , error] = useDocument<any>(
     appSettings.applicationId
   )
+  console.log(application)
 
   if (isLoading || isPluginsLoading) return <Progress.Circular />
 
@@ -32,11 +34,12 @@ function App() {
 
   return (
     <ApplicationContext.Provider value={application}>
-      <UIPluginSelector
-        absoluteDottedId={`${dataSourceId}/${application?._id}`}
-        type={application?.type}
-        categories={['Application']}
-      />
+      <FSTreeProvider visibleDataSources={appSettings.dataSources}>
+        <UIPluginSelector
+          idReference={`${dataSourceId}/${application?._id}`}
+          type={application?.type}
+        />
+      </FSTreeProvider>
     </ApplicationContext.Provider>
   )
 }

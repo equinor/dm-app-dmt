@@ -2,14 +2,14 @@ import * as React from 'react'
 import { useContext } from 'react'
 import {
   ApplicationContext,
-  EPluginType,
   Header,
   FSTreeProvider,
+  TPlugin,
+  UIPluginSelector,
 } from '@development-framework/dm-core'
 import SearchPage from './pages/SearchPage'
 import ViewPage from './pages/ViewPage'
 import { Route } from 'react-router-dom'
-import Editor from './pages/editor/Editor'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -33,32 +33,26 @@ const PageComponent = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <FSTreeProvider visibleDataSources={applicationSettings.dataSources}>
-        <GlobalStyle />
-        <Header
-          allApps={[]}
-          appName={applicationSettings.label}
-          urlPath={'/'}
-        />
-        <Route
-          path="/search"
-          render={() => <SearchPage settings={applicationSettings} />}
-        />
-        <Route
-          exact
-          path="/view/:data_source/:entity_id"
-          component={() => <ViewPage settings={applicationSettings} />}
-        />
-        <Route exact path={`/`} render={() => <Editor />} />
-      </FSTreeProvider>
+      <GlobalStyle />
+      <Header allApps={[]} appName={applicationSettings.label} urlPath={'/'} />
+      <Route
+        path="/search"
+        render={() => <SearchPage settings={applicationSettings} />}
+      />
+      <Route
+        exact
+        path="/view/:data_source/:entity_id"
+        component={() => <ViewPage settings={applicationSettings} />}
+      />
+
+      {/*<Route exact path={`/`} render={() => <Editor />} />*/}
     </ThemeProvider>
   )
 }
 
-export const plugins: any = [
+export const plugins: TPlugin[] = [
   {
     pluginName: 'DMT',
-    pluginType: EPluginType.PAGE,
     component: PageComponent,
   },
 ]
