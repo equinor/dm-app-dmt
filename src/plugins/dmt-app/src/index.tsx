@@ -2,25 +2,16 @@ import * as React from 'react'
 import { useContext } from 'react'
 import {
   ApplicationContext,
-  EPluginType,
-  Header,
   FSTreeProvider,
+  IUIPlugin,
+  TPlugin,
 } from '@development-framework/dm-core'
 import SearchPage from './pages/SearchPage'
 import ViewPage from './pages/ViewPage'
 import { Route } from 'react-router-dom'
-import Editor from './pages/editor/Editor'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
+import { plugins as headerPlugins } from '@development-framework/header'
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: Equinor-Regular, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-`
 const theme = {
   flexboxgrid: {
     gutterWidth: 0, // rem
@@ -28,18 +19,20 @@ const theme = {
   },
 }
 
-const PageComponent = () => {
+const DmtApp = (props: IUIPlugin) => {
+  const { idReference, config, type } = props
   const applicationSettings = useContext(ApplicationContext)
+  const headerPlugin: TPlugin = headerPlugins.find((plugin) => {
+    return plugin.pluginName === 'header'
+  }) || {
+    pluginName: 'undefined',
+    component: (props: IUIPlugin) => <div>Could not find header plugin</div>,
+  }
+  const Header: (props: IUIPlugin) => JSX.Element = headerPlugin.component
 
   return (
     <ThemeProvider theme={theme}>
       <FSTreeProvider visibleDataSources={applicationSettings.dataSources}>
-        <GlobalStyle />
-        <Header
-          allApps={[]}
-          appName={applicationSettings.label}
-          urlPath={'/'}
-        />
         <Route
           path="/search"
           render={() => <SearchPage settings={applicationSettings} />}
@@ -49,16 +42,21 @@ const PageComponent = () => {
           path="/view/:data_source/:entity_id"
           component={() => <ViewPage settings={applicationSettings} />}
         />
-        <Route exact path={`/`} render={() => <Editor />} />
+        <Route
+          exact
+          path={`/`}
+          render={() => (
+            <Header idReference={idReference} config={config} type={type} />
+          )}
+        />
       </FSTreeProvider>
     </ThemeProvider>
   )
 }
 
-export const plugins: any = [
+export const plugins: TPlugin[] = [
   {
     pluginName: 'DMT',
-    pluginType: EPluginType.PAGE,
-    component: PageComponent,
+    component: DmtApp,
   },
 ]
