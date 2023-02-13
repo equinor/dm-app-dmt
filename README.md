@@ -47,6 +47,11 @@ App specific documents and lookup has to be recreated.
 docker-compose run --rm dmss reset-app
 ```
 
+Oneliner to reset database:
+```bash
+docker-compose run --rm dmss reset-app && dm reset apps && dm create-lookup DMT DMT/DMT/recipe_links
+```
+
 ### Running Tests
 
 Unit tests:

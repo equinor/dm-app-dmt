@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import React, { useContext } from 'react'
 import {
   ApplicationContext,
@@ -15,7 +13,7 @@ const dataSourceId = _applicationId[0]
 
 function App() {
   const { loading: isPluginsLoading } = useContext(UiPluginContext)
-  const [application, isLoading, , error] = useDocument(
+  const [application, isLoading, , error] = useDocument<any>(
     appSettings.applicationId
   )
 
@@ -33,9 +31,8 @@ function App() {
   return (
     <ApplicationContext.Provider value={application}>
       <UIPluginSelector
-        absoluteDottedId={`${dataSourceId}/${application?._id}`}
+        idReference={`${dataSourceId}/${application?._id}`}
         type={application?.type}
-        categories={['Application']}
       />
     </ApplicationContext.Provider>
   )

@@ -6,7 +6,24 @@
       "name": "Default",
       "type": "CORE:UiRecipe",
       "plugin": "DMT",
-      "category": "Application"
+      "category": "Application",
+      "config": {
+        "uiRecipesList": ["Yaml", "Explorer"],
+        "type": "HeaderPluginConfig",
+        "hideAbout": false,
+        "hideUserInfo": false
+      }
+    },
+    {
+      "name": "Yaml",
+      "type": "CORE:UiRecipe",
+      "plugin": "yaml-view",
+      "category": "container"
+    },
+    {
+      "name": "Explorer",
+      "type": "CORE:UiRecipe",
+      "plugin": "explorer"
     }
   ]
 }
