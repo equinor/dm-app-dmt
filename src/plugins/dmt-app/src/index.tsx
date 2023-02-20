@@ -24,7 +24,7 @@ const DmtApp = (props: IUIPlugin) => {
   const applicationSettings = useContext(ApplicationContext)
   const headerPlugin: TPlugin = headerPlugins.find((plugin) => {
     return plugin.pluginName === 'header'
-  }) || {
+  }) ?? {
     pluginName: 'undefined',
     component: (props: IUIPlugin) => <div>Could not find header plugin</div>,
   }
