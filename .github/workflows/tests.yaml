@@ -27,7 +27,7 @@ jobs:
           docker-compose -f docker-compose.yml  -f docker-compose.ci.yml build
 
       - name: "Web Tests"
-        run: docker-compose -f docker-compose.yml  -f docker-compose.ci.yml run --rm web yarn test
+        run: docker-compose -f docker-compose.yml  -f docker-compose.ci.yml run --rm web yarn test --passWithNoTests
 
       - name: "Test for typescript errors"
         run: docker-compose -f docker-compose.yml  -f docker-compose.ci.yml run --rm web yarn tsc

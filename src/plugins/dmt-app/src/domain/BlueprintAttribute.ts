@@ -15,7 +15,6 @@ export class BlueprintAttribute {
     return this.attr.name.charAt(0).toUpperCase() + this.attr.name.substr(1)
   }
 
-
   public isPrimitive(): boolean {
     //todo use AttributeTypes enum, available in the blueprint.
     return ['string', 'number', 'integer', 'boolean'].includes(

@@ -5,7 +5,7 @@
     {
       "name": "Default",
       "type": "CORE:UiRecipe",
-      "plugin": "header",
+      "plugin": "DMT",
       "category": "Application",
       "config": {
         "uiRecipesList": ["Yaml", "Explorer"],
