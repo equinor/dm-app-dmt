@@ -15,17 +15,6 @@ export class BlueprintAttribute {
     return this.attr.name.charAt(0).toUpperCase() + this.attr.name.substr(1)
   }
 
-  public isArray() {
-    return this.attr.dimensions && this.attr.dimensions === '*'
-  }
-
-  public isComplexArray() {
-    return this.attr.dimensions?.includes(',')
-  }
-
-  public static isArray(value: string) {
-    return value !== ''
-  }
 
   public isPrimitive(): boolean {
     //todo use AttributeTypes enum, available in the blueprint.
